@@ -32,9 +32,7 @@ int[] primes(int n) {
     }
 
     int[] arr = new int[counter]; //Copy helper to new array to erase 0
-    for(int i = 0; i < counter; i++) {
-        arr[i] = helper[i];
-    }
+    System.arraycopy(helper, 0, arr, 0, counter);
 
     return arr;
 }
