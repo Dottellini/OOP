@@ -15,9 +15,6 @@ class Game {
 
         for(int e: life) {
             assert e > fullSize && e < world.length-fullSize && e % fullSize != 0 && e % fullSize-1 != 0 : "Life not in playing field";
-        }
-
-        for(int e: life) {
             world[e] = 1;
             alive++;    
         }
