@@ -55,9 +55,9 @@ class Creature {
         String s = creatureString(this);
         
         //This loop make s empty for some reason
-        //(int i = 0; i <= counter; i++) {
-        //    s += "\nparent of " + creatureString(parentOf[i]);
-        //}
+        for(int i = 0; i <= counter; i++) {
+            s += "\nparent of " + creatureString(parentOf[i]);
+        }
     
         return s;
     }
