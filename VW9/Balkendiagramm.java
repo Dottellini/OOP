@@ -19,7 +19,7 @@ class Chart {
     int index = 0;
 
     Chart(int size) {
-        if(size < 0) throw new IllegalArgumentException("required: n >= 0");
+        if(size < 0) throw new IllegalArgumentException("required: size >= 0");
         bars = new Bar[size];
     }
 
@@ -27,16 +27,18 @@ class Chart {
         up(1);
     }
 
-    void up(int up) {
-        index = (index + up) % bars.length;
+    void up(int n) {
+        if(n <= 0) throw new IllegalArgumentException("required: n > 0");
+        index = (index + n) % bars.length;
     }
 
     void down() {
         down(1);
     }
 
-    void down(int down) {
-        index = (index + bars.length - down) % bars.length;
+    void down(int n) {
+        if(n <= 0) throw new IllegalArgumentException("required: n > 0");
+        index = (index + bars.length - n) % bars.length;
     }
 
     void set(Bar bar) {
