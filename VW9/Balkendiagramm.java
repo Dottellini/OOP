@@ -39,11 +39,7 @@ class Chart {
     public String toString() {
         String s = "";
         for(int i = 0; i < bars.length; i++) {
-            if(bars[i] == null) {
-                s += (index == i ? "* " : "  ") + "???\n";
-            } else {
-                s += (index == i ? "* " : "  ") + bars[i].toString() + "\n";
-            }
+            s += (index == i ? "* " : "  ") + (bars[i] == null ? "???" : bars[i].toString()) + "\n";
         }
         return s;
     }
