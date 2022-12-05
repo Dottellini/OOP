@@ -23,12 +23,20 @@ class Chart {
         bars = new Bar[size];
     }
 
+    void up() {
+        up(1);
+    }
+
     void up(int up) {
         index = (index + up) % bars.length;
     }
 
+    void down() {
+        down(1);
+    }
+
     void down(int down) {
-        index = (index + (bars.length - down)) % bars.length;
+        index = (index + bars.length - down) % bars.length;
     }
 
     void set(Bar bar) {
