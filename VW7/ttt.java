@@ -5,6 +5,8 @@ class TTT {
     int[] history = new int[board.length];
     int moves = 0;
 
+    TTT() {}
+
     TTT(char[] symbol) {
         assert symbol.length == 3;
         this.symbol = symbol;
@@ -73,7 +75,7 @@ class TTT {
     }
 
     public String toString() {
-        String s = "";
+        String s = "\n";
         for(int i = 0; i < board.length; i++) {
             s += i % 3 != 2 ? symbol[board[i] + 1] : symbol[board[i] + 1] + "\n";
         }
