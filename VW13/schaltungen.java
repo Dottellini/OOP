@@ -1,3 +1,5 @@
+import java.util.Random;
+
 enum Bit { ZERO, ONE; }
 
 interface Gate {
@@ -6,10 +8,15 @@ interface Gate {
 }
 
 abstract class OberGate {
-    Bit[] resultBit = new Bit[]{};
+    Bit[] resultBit = new Bit[1];
     int counter = 0;
 
     public Bit[] getOutput() {
+        for(int i = 0; i < resultBit.length; i++) {
+            if(resultBit[i] == null) {
+               resultBit[i] = new Random().nextInt(100) > 75 ? Bit.ONE : Bit.ZERO;
+           }
+        }
         return resultBit;
     }
 }
@@ -31,10 +38,11 @@ class AND extends OberGate implements Gate {
             }
         }
 
+        
+
         counter++;
         return this;
     }
-
 }
 
 
